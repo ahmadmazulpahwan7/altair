@@ -1,0 +1,24 @@
+https://github.com/ahmadmazulpahwan7/altair
+
+Altair adalah tool Python yang dapat digunakan untuk scan kerentanan terkait web, beberapa di antaranya termasuk kerentanan basis data (SQL), Cross Site Scripting (XSS), Local File Inclusion  (LFI), Remote File Inclusion (RFI), potensi file sensitif , dan direktori yang berisi informasi sensitif.
+
+tool ini scan file dan direktori host target untuk menemukan kerentanan potensial. Altair juga dapat menggunakan alat SQLMAP dan Lfier untuk mengeksploitasi kelemahan tersebut. SQLMAP adalah alat praktis yang mengeksploitasi kerentanan basis data. tool Lfier mampu mengeksploitasi kerentanan LFI.
+
+Altair adalah alat berbasis Python yang tidak memerlukan paket khusus untuk diinstal sebagai prasyarat. Alat SQLMAP dan Lfier harus tersedia untuk alat ini jika tujuannya adalah untuk mengeksploitasi kerentanan (LFI, SQL) yang ditemukan selama proses pemindaian. Alat ini dapat dikloning menggunakan perintah berikut
+
+Code
+python altair.py –u http://situs.co.li
+
+Perintah di atas semua tautan yang terkait dengan host web target. Setelah menyelesaikan proses scanning, tool menyebutkan tautan target untuk menemukan kerentanan. Jika host target rentan terhadap kerentanan apa pun yang disebutkan di atas, alat ini akan menampilkan hasilnya seperti yang ditunjukkan pada screnshoot berikut.
+
+Kami juga dapat mendefinisikan filter dan modul dalam perintah untuk memperbaiki proses pemindaian dan mengeksploitasi kerentanan (jika ada). Sebagai contoh, kita dapat menerapkan filter sqli untuk memindai host web target untuk kerentanan SQL. Modul (SQLMAP) dapat didefinisikan untuk mengeksploitasi kerentanan SQL. Perintah berikut menunjukkan penyertaan filter dan modul dalam proses scanning.
+
+Code
+python altair.py --filter=sqli --load-modules=sqlmap -–url=http://situs.co.li
+
+Jika host web target rentan terhadap kerentanan SQL, tool ini untuk lebih mengeksploitasi kerentanan yang ditemukan.
+kita juga dapat scanning dapat menjalankan Modul (LFI, RFI) Untuk mengekploitasi kerentanan LFI Maupun RFI, Perintah berikut menunjukkan penyertaan filter dan modul dalam proses scanning.
+
+python altair.py --filter=lfi,rfi --url=http://situs.co.li
+
+
